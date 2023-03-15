@@ -31,8 +31,8 @@ XTerm*borderWidth: 0
 XTerm*VT100.internalBorder: 0
 
 ! Geometry adapted to my 4k screen
-XTerm.VT100.geometry: 88x23
-XTerm*fullscreen: true
+! XTerm.VT100.geometry: 88x23
+XTerm*fullscreen: false
 
 ! Cursor with no blink
 XTerm*cursorBlink: False
@@ -59,11 +59,11 @@ XTerm.VT100.utf8Title: true
 XTerm*menuLocale: "C"
 
 ! No sound, visualbell only, and cause focus
-XTerm*visualBell: true
-XTerm*popOnBell: true
+XTerm*visualBell: false
+XTerm*popOnBell: false
 XTerm*bellIsUrgent: true
 ! Minimal visualbell
-XTerm*visualBellLine: true
+XTerm*visualBellLine: false
 XTerm*visualBellDelay: 20
 
 ! Selection
@@ -86,8 +86,8 @@ XTerm*selectToClipboard: false
 ! by default, use primary to avoid overwriting what everybody uses, iff ctrl-c send to clipboard
 XTerm*VT100*translations:    #override \n\
    <BtnUp>:select-end(SELECT, CUT_BUFFER0, PRIMARY) \n\
-   Ctrl <Key> C: copy-selection(CLIPBOARD, PRIMARY) \n\
-   Ctrl <Key> V: insert-selection(CLIPBOARD) \n\
+   Ctrl <Key> Y: copy-selection(CLIPBOARD, PRIMARY) \n\
+   Ctrl <Key> P: insert-selection(CLIPBOARD) \n\
    Shift Ctrl <Key> V: insert-selection(PRIMARY) \n\
    Shift <Key> Insert: insert-selection(CUT_BUFFER0,PRIMARY,CLIPBOARD) \n\
    Shift Ctrl <Key>  Insert: insert-formatted("\033[202~%S~%s", CUT_BUFFER0,PRIMARY,CLIPBOARD) \n\
@@ -119,7 +119,7 @@ XTerm*VT100*translations:    #override \n\
 ! FIXME: finding in the scroll buffer is not working yet
 !   Shift Ctrl <KeyPress> F:dabbrev-expand() \n\
 !  Meta <KeyPress> /:dabbrev-expand()
- 
+
 ! Extract url with ctrl-shift-o
 ! XTerm.vt100.printerCommand: xterm-open-url.sh
 
@@ -141,63 +141,63 @@ XTerm*VT100*translations:    #override \n\
 !Background & foreground
 !XTerm*background: #002B36
 !WONTFIX: a pure black is better on OLED
-XTerm*background: #000000
-XTerm*foreground: #D2D2D2
+XTerm*background: #191724
+XTerm*foreground: #E0DEF4
 XTerm*borderColor: #343434
 
 !Colors: Solarized dark
 !-------------------------
 !black
-XTerm*color0: #222222
-XTerm*color8: #454545
+XTerm*color0: #36393D
+XTerm*color8: #191919
 
 !red
-XTerm*color1: #9E5641
-XTerm*color9: #CC896D
+XTerm*color1: #CE2727
+XTerm*color9: #B02626
 
 !green
-XTerm*color2: #6C7E55
-XTerm*color10: #C4DF90
+XTerm*color2: #47C930
+XTerm*color10: #40A62F
 
 !yellow
-XTerm*color3: #CAAF2B
-XTerm*color11: #FFE080
+XTerm*color3: #FFF138
+XTerm*color11: #F2E635
 
 !blue
-XTerm*color4: #7FB8D8
-XTerm*color12: #B8DDEA
+XTerm*color4: #2E4BEA
+XTerm*color12: #314AD0
 
 !magenta
-XTerm*color5: #956D9D
-XTerm*color13: #C18FCB
+XTerm*color5: #CC15ED
+XTerm*color13: #B30AD0
 
 !cyan
-XTerm*color6: #4c8ea1
-XTerm*color14: #6bc1d0
+XTerm*color6: #54D9FF
+XTerm*color14: #32D0FC
 
 !white
-XTerm*color7: #808080
-XTerm*color15: #cdcdcd
+XTerm*color7: #DBDBDB
+XTerm*color15: #ACADB1
 
 ! For regular sized screens (not 4k)
 ! apt install fonts-terminus xfonts-terminus xfonts-terminus-oblique fonts-inconsolata
 ! Default font, used for drawing the menu
-!XTerm*font:    12x24
+XTerm*font:    12x24
 ! Ctrl-click menu choices
-!XTerm*VT100.font1:   terminus-12
-!XTerm*VT100.font2:   terminus-12
-!XTerm*VT100.font3:   terminus-16
-!XTerm*VT100.font4:   terminus-18
-!XTerm*VT100.font5:   terminus-20
-!XTerm*VT100.font6:   terminus-22
-!XTerm*fontMenu.Label:  VT Fonts
-!XTerm*fontMenu*fontdefault*Label:    Default
-!XTerm*fontMenu*font1*Label:  Unreadable
-!XTerm*fontMenu*font2*Label:  12-points
-!XTerm*fontMenu*font3*Label:  16-points
-!XTerm*fontMenu*font4*Label:  18-points
-!XTerm*fontMenu*font5*Label:  20-points
-!XTerm*fontMenu*font6*Label:  22-points
+XTerm*VT100.font1:   terminus-12
+XTerm*VT100.font2:   terminus-12
+XTerm*VT100.font3:   terminus-16
+XTerm*VT100.font4:   terminus-18
+XTerm*VT100.font5:   terminus-20
+XTerm*VT100.font6:   terminus-22
+XTerm*fontMenu.Label:  VT Fonts
+XTerm*fontMenu*fontdefault*Label:    Default
+XTerm*fontMenu*font1*Label:  Unreadable
+XTerm*fontMenu*font2*Label:  12-points
+XTerm*fontMenu*font3*Label:  16-points
+XTerm*fontMenu*font4*Label:  18-points
+XTerm*fontMenu*font5*Label:  20-points
+XTerm*fontMenu*font6*Label:  22-points
 
 ! Aliasing and hinting is question of tastes
 ! I like it so I keep it even in 4k
@@ -205,31 +205,14 @@ XTerm*color15: #cdcdcd
 ! Xft.antialias: false
 ! Xft.hinting: false
 
-! For 4k screens
-! Default font, used for drawing the menu
-XTerm*font:    -*-terminus-*-r-*-32-*-*-*-*-*-*-*
-! Ctrl-click menu choices
-XTerm*font1:   -*-terminus-*-r-*-18-*-*-*-*-*-*-*
-XTerm*font2:   -*-terminus-*-r-*-20-*-*-*-*-*-*-*
-XTerm*font3:   -*-terminus-*-r-*-22-*-*-*-*-*-*-*
-XTerm*font4:   -*-terminus-*-r-*-24-*-*-*-*-*-*-*
-XTerm*font5:   -*-terminus-*-r-*-28-*-*-*-*-*-*-*
-XTerm*font6:   -*-terminus-*-r-*-32-*-*-*-*-*-*-*
-XTerm*fontMenu.Label:  VT Fonts
-XTerm*fontMenu*fontdefault*Label:    Default
-XTerm*fontMenu*font1*Label:  Terminus 18
-XTerm*fontMenu*font2*Label:  Terminus 20
-XTerm*fontMenu*font3*Label:  Terminus 22
-XTerm*fontMenu*font4*Label:  Terminus 24
-XTerm*fontMenu*font5*Label:  Terminus 28
-XTerm*fontMenu*font6*Label:  Terminus 32
-XTerm*faceSize: 22
-! For a 4k display, matching hight for the menu:
-XTerm*menuHeight: 2000
 
 ! No ligatures support yet, so iosevka is not shining
-XTerm*faceName: "Iosevka SS04 Light"
-XTerm*boldFont: "Iosevka SS04 SemiBold"
+!XTerm*faceName: "Iosevka SS04 Medium"
+!XTerm*boldFont: "Iosevka SS04 Bold"
+XTerm*renderFont: true
+XTerm*faceName: JetBrainsMono Nerd Font:style=Medium
+XTerm*boldFont: JetBrainsMono Nerd Font:style=Medium SemiBold
+XTerm*faceSize: 10
 ! Patched iosevka for nnn icons
 !XTerm*faceName: "Iosevka Nerd Font Mono"
 ! Pached ubuntu font for powerline
@@ -243,3 +226,8 @@ Xcursor.size: 64
 !XTerm*pointerColor: blue
 !XTerm*pointerColorBackground: red
 
+Xft.dpi: 140
+Xft.Hinting: 1
+Xft.RGBA: rgb
+Xft.HintStyle: hintslight
+Xft.Antialias: 1
