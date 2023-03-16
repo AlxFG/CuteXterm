@@ -139,8 +139,6 @@ XTerm*VT100*translations:    #override \n\
 !   Shift Ctrl <Key>R: restore()
 
 !Background & foreground
-!XTerm*background: #002B36
-!WONTFIX: a pure black is better on OLED
 XTerm*background: #191724
 XTerm*foreground: #E0DEF4
 XTerm*borderColor: #343434
@@ -179,7 +177,6 @@ XTerm*color14: #32D0FC
 XTerm*color7: #DBDBDB
 XTerm*color15: #ACADB1
 
-! For regular sized screens (not 4k)
 ! apt install fonts-terminus xfonts-terminus xfonts-terminus-oblique fonts-inconsolata
 ! Default font, used for drawing the menu
 XTerm*font:    12x24
@@ -199,35 +196,7 @@ XTerm*fontMenu*font4*Label:  18-points
 XTerm*fontMenu*font5*Label:  20-points
 XTerm*fontMenu*font6*Label:  22-points
 
-! Aliasing and hinting is question of tastes
-! I like it so I keep it even in 4k
-! Xft.autohint: 0
-! Xft.antialias: false
-! Xft.hinting: false
-
-
-! No ligatures support yet, so iosevka is not shining
-!XTerm*faceName: "Iosevka SS04 Medium"
-!XTerm*boldFont: "Iosevka SS04 Bold"
 XTerm*renderFont: true
 XTerm*faceName: JetBrainsMono Nerd Font:style=Medium
 XTerm*boldFont: JetBrainsMono Nerd Font:style=Medium SemiBold
 XTerm*faceSize: 10
-! Patched iosevka for nnn icons
-!XTerm*faceName: "Iosevka Nerd Font Mono"
-! Pached ubuntu font for powerline
-!XTerm*faceName: "Ubuntu Mono for Powerline"
-!XTerm*boldFont: "Ubuntu Mono Bold"
-
-! FIXME: A pointer of the same approx size is not working
-!Xcursor*size: 32
-Xcursor.size: 64
-! FIXME: The following can help making it more visible
-!XTerm*pointerColor: blue
-!XTerm*pointerColorBackground: red
-
-Xft.dpi: 140
-Xft.Hinting: 1
-Xft.RGBA: rgb
-Xft.HintStyle: hintslight
-Xft.Antialias: 1
